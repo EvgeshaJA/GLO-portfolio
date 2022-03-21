@@ -3,7 +3,7 @@
 const buttons = document.querySelectorAll('.design-list__item');
 const buttonsDescr = document.querySelectorAll('.design__descr');
 const images = document.querySelectorAll('.design-images');
-const titles = document.querySelectorAll('.section__title');
+const titles = document.querySelectorAll('.design__title');
 const bigImgs = document.querySelectorAll('.feature__img');
 
 

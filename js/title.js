@@ -9,3 +9,5 @@ Array.prototype.forEach.call(buttons, function(el) {
     el.onclick = titleChanger;
 });
 
+
+
