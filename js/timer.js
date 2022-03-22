@@ -34,19 +34,20 @@ let interval;
 
 const updateClock = () => {
     const date = new Date().getTime();
-    const dateDeadline = new Date(deadline).getTime();
-    const timeRemaining = (dateDeadline - date) / 1000; // делим на 1 секунду
+    const dateDeadline = new Date(deadline).getTime();  // передали параметры дедлайна из переменной
+    const timeRemaining = (dateDeadline - date) / 1000; // делим на 1 секунду, это оставшееся время до дедлайна
     
-    const hours = Math.floor(timeRemaining / 60 / 60); // перевели в часы и округлили
+    const hours = Math.floor(timeRemaining / 60 / 60 % 24); // перевели в часы и округлили
     const minutes = Math.floor((timeRemaining / 60) % 60); // используя оператор "остаток от деления" убрали часы
-    const seconds = Math.floor(timeRemaining % 60); 
+    const seconds = Math.floor(timeRemaining % 60);
+    const days = Math.floor(timeRemaining / 60 / 60 / 24);
 
     const   fhours = hours < 10 ? '0' + hours : hours,
             fminutes = minutes < 10 ? '0' + minutes : minutes,
-            fseconds = seconds < 10 ? '0' + seconds : seconds; 
+            fseconds = seconds < 10 ? '0' + seconds : seconds;
 
 
-    timerBlock.textContent = `${fhours} : ${fminutes} : ${fseconds}`;
+    timerBlock.textContent = `${days} days ${fhours} : ${fminutes} : ${fseconds}`;
 
     if (timeRemaining <= 0) {
         clearInterval(interval); // условие позволит избежать отсчета с отрицательным значением

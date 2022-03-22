@@ -11,7 +11,6 @@ const bigImgs = document.querySelectorAll('.feature__img');
 /*
 buttons.forEach((i, index) => {  // index - это будет порядковый номр элемента
     i.addEventListener('click', (event) => { 
-
         buttonsDescr.forEach((descr, indexDesrc) => {
             if(index === indexDesrc) {
                 descr.classList.remove('hidden');
@@ -19,7 +18,6 @@ buttons.forEach((i, index) => {  // index - это будет порядковы
                 descr.classList.add('hidden');
             }
         }); // descr тоже самое, что и i
-
         images.forEach((img, indexImg) => {
             if(index === indexImg) {
                 img.classList.remove('hidden');
@@ -27,7 +25,6 @@ buttons.forEach((i, index) => {  // index - это будет порядковы
                 img.classList.add('hidden');
             }
         });
-
         buttons.forEach((btn) => {
             if (btn === event.target) { // event.target позволяет перхватить элемент, на который нажал пользователь (можно использовать для любых обработчиков событий, даже фокусировки на элементе).
                 btn.classList.add('design-list__item_active');
@@ -44,7 +41,6 @@ buttons.forEach((i, index) => {  // index - это будет порядковы
 buttons.forEach((i, index) => {  // index - это будет порядковый номр элемента
     i.addEventListener('click', (event) => { 
         const dataValue = i.dataset.tabsHandler; // tabsHandler берем из html, заменяя дефис на горбатый стиль, слово data обработчик заменяет сам
-
         buttonsDescr.forEach((descr) => {
             if(descr.dataset.tabsField === dataValue) { // tabsField - привязка нужного блока из html по дата-атребуту, а в значении атрибута указываются нужные связки body, interior
                 descr.classList.remove('hidden');
@@ -52,7 +48,6 @@ buttons.forEach((i, index) => {  // index - это будет порядковы
                 descr.classList.add('hidden');
             }
         }); // descr тоже самое, что и i
-
         images.forEach((img) => {
             if(img.dataset.tabsField === dataValue) {
                 img.classList.remove('hidden');
@@ -60,7 +55,6 @@ buttons.forEach((i, index) => {  // index - это будет порядковы
                 img.classList.add('hidden');
             }
         });
-
         buttons.forEach((btn) => {
             if (btn === event.target) { // event.target позволяет перхватить элемент, на который нажал пользователь (можно использовать для любых обработчиков событий, даже фокусировки на элементе).
                 btn.classList.add('design-list__item_active');
@@ -103,5 +97,3 @@ buttons.forEach((i) => {
     });
     });
 });
-
-
